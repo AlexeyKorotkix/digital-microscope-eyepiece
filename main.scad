@@ -1,4 +1,4 @@
-use <test_01.scad>
+use <smartphone.scad>
 
 echo ("Работа Алексея Коротких!");
 smartphone();
