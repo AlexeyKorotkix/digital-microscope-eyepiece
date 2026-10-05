@@ -29,26 +29,34 @@ module t_cross() {
         translate([-width_phone/2, 0, 0])
         cylinder(d=9, h=thickness_holder, center=true, $fn=32);
     }
+    
+    cylinder(h=thickness_holder, d=25, center=true, $fn=64);
 }
 
 
 
 module screw_hole() {
-    color("red")
-    hull() {
-        translate([0, -len_phone/2, 0])
-        cylinder(d=d_screw_m4, h=thickness_holder+2, center=true, $fn=32);
+    difference() {
+        union() {
+            color("red")
+            hull() {
+                translate([0, -len_phone/2, 0])
+                cylinder(d=d_screw_m4, h=thickness_holder+2, center=true, $fn=32);
 
-        translate([0, len_phone/2, 0])
-        cylinder(d=d_screw_m4, h=thickness_holder+2, center=true, $fn=32);
-    }
+                translate([0, len_phone/2, 0])
+                cylinder(d=d_screw_m4, h=thickness_holder+2, center=true, $fn=32);
+            }
 
-    color("red")
-    hull() {
-        translate([width_phone/2, 0, 0])
-        cylinder(d=d_screw_m4, h=thickness_holder+2, center=true, $fn=32);
+            color("red")
+            hull() {
+                translate([width_phone/2, 0, 0])
+                cylinder(d=d_screw_m4, h=thickness_holder+2, center=true, $fn=32);
 
-        translate([-width_phone/2, 0, 0])
-        cylinder(d=d_screw_m4, h=thickness_holder+2, center=true, $fn=32);
+                translate([-width_phone/2, 0, 0])
+                cylinder(d=d_screw_m4, h=thickness_holder+2, center=true, $fn=32);
+            }
+        }
+        
+        cylinder(h=thickness_holder+4, d=25, center=true, $fn=64);
     }
 }
